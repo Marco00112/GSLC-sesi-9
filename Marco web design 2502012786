@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+npx create-react-app my-app
+const Film = () => {
+  const [film, setfilm] = useState({
+    negara pembuat film: "",
+    jenis genre film: "",
+    durasi film: "",
+    bahasa film: "",
+    tahun film:"",
+  });
+
+  return (
+    <div>
+      <h1>Film</h1>
+
+      <div>
+        <label for="negara">negara</label>
+        <input
+          type="text"
+          id="negara film"
+          value={film.negara}
+          onChange={(e) => setfilm({ ...,film, negara: e.target.value })}
+        />
+      </div>
+
+      <div>
+        <label for="jenis">Jenis</label>
+        <select
+          id="jenis film"
+          value={film.jenis}
+          onChange={(e) => setfilm({ ...film, jenis: e.target.value })}
+        >
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Horror">Horror</option>
+          <option value="Drama">Drama</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="durasi">durasi</label>
+        <input
+          type="number"
+          id="durasi"
+          value={film.durasi}
+          onChange={(e) => setfilm({ ...film, durasi: e.target.value })}
+        />
+      </div>
+
+      <div>
+        <label for="bahasa">bahasa</label>
+        <input
+          type="text"
+          id="bahasa"
+          value={film.bahasa}
+          onChange={(e) => setfilm({ ...film, bahasa: e.target.value })}
+          >
+         <option value="Indonesia">Indonesia</option>
+          <option value="Inggris">Inggris</option>
+          <option value="Mandarin">Mandarin</option>
+          <option value="Korea">Korea</option>
+        </select>
+        />
+      </div>
+
+      <div>
+        <label for="tahun">tahun</label>
+        <select
+          id="tahun film"
+          value={film.tahun}
+          onChange={(e) => setfilm({ ...film, tahun: e.target.value })}
+        >
+      </div>
+      <input type="submit" value="submit"
+    </div>
+  );
+};
+cd my-app
+npm start
+export default film;
